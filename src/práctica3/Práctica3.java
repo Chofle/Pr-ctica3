@@ -14,6 +14,11 @@ import javax.swing.ImageIcon;
 public class Práctica3 extends javax.swing.JFrame {
     
     Random generadorLetras = new Random();
+    
+    String cadenaLetras = "";
+    String cadenaLetras16 = ""; 
+    Boolean acierto = false;
+    int contadorAciertos = 0;
     /**
      * Creates new form Práctica3
      */
@@ -35,6 +40,9 @@ public class Práctica3 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -55,9 +63,13 @@ public class Práctica3 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 185, 78));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
@@ -68,6 +80,12 @@ public class Práctica3 extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -75,26 +93,39 @@ public class Práctica3 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(28, 28, 28)
+                .addGap(10, 10, 10)
                 .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(255, 185, 78));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
@@ -134,24 +165,16 @@ public class Práctica3 extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jToggleButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton4)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton5)
+                        .addComponent(jToggleButton12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton6)
+                        .addComponent(jToggleButton13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton16)
+                        .addComponent(jToggleButton14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton7))
+                        .addComponent(jToggleButton15))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jToggleButton8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -161,61 +184,84 @@ public class Práctica3 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton11))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton12)
+                        .addComponent(jToggleButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton13)
+                        .addComponent(jToggleButton6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton14)
+                        .addComponent(jToggleButton16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton15)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jToggleButton7))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jToggleButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton4)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton1)
                     .addComponent(jToggleButton2)
+                    .addComponent(jToggleButton1)
                     .addComponent(jToggleButton3)
                     .addComponent(jToggleButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton5)
-                    .addComponent(jToggleButton6)
+                    .addComponent(jToggleButton16)
                     .addComponent(jToggleButton7)
-                    .addComponent(jToggleButton16))
+                    .addComponent(jToggleButton6)
+                    .addComponent(jToggleButton5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton8)
-                            .addComponent(jToggleButton9)
-                            .addComponent(jToggleButton10)
-                            .addComponent(jToggleButton11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jToggleButton12)
-                                .addComponent(jToggleButton13))
-                            .addComponent(jToggleButton15, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(jToggleButton14, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jToggleButton11, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jToggleButton10)
+                        .addComponent(jToggleButton9))
+                    .addComponent(jToggleButton8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jToggleButton14)
+                    .addComponent(jToggleButton15)
+                    .addComponent(jToggleButton13)
+                    .addComponent(jToggleButton12))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel3.setBackground(new java.awt.Color(255, 185, 78));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Empezar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Recordar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jButton3.setText("Comprobar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("  Aciertos:");
+        jLabel8.setAlignmentX(10.0F);
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -224,8 +270,11 @@ public class Práctica3 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -235,73 +284,484 @@ public class Práctica3 extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String cadenaLetras = "";
+       
+        jToggleButton1.setEnabled(false);
+        jToggleButton2.setEnabled(false);
+        jToggleButton3.setEnabled(false);
+        jToggleButton4.setEnabled(false);
+        jToggleButton5.setEnabled(false);
+        jToggleButton6.setEnabled(false);
+        jToggleButton7.setEnabled(false);
+        jToggleButton8.setEnabled(false);
+        jToggleButton9.setEnabled(false);
+        jToggleButton10.setEnabled(false);
+        jToggleButton11.setEnabled(false);
+        jToggleButton12.setEnabled(false);
+        jToggleButton13.setEnabled(false);
+        jToggleButton14.setEnabled(false);
+        jToggleButton15.setEnabled(false);
+        jToggleButton16.setEnabled(false);
+        
+        jToggleButton1.setSelected(false);
+        jToggleButton2.setSelected(false);
+        jToggleButton3.setSelected(false);
+        jToggleButton4.setSelected(false);
+        jToggleButton5.setSelected(false);
+        jToggleButton6.setSelected(false);
+        jToggleButton7.setSelected(false);
+        jToggleButton8.setSelected(false);
+        jToggleButton9.setSelected(false);
+        jToggleButton10.setSelected(false);
+        jToggleButton11.setSelected(false);
+        jToggleButton12.setSelected(false);
+        jToggleButton13.setSelected(false);
+        jToggleButton14.setSelected(false);
+        jToggleButton15.setSelected(false);
+        jToggleButton16.setSelected(false);     
+        
         
         do{
             int letra = generadorLetras.nextInt(16)+65;
             char letrasAleatorias = (char) letra;
             cadenaLetras += letrasAleatorias;
+            
             System.out.println(cadenaLetras);
             
-            for(int i = 0; i <cadenaLetras.length();i++){
-                switch(cadenaLetras.charAt(i)){
-                    case 0:
-                        
-                        /*jLabel1.setIcon(new ImageIcon(getClass().
-        getResource("Recursos/DadoPrincipal.png")));*/
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                }
-            }
-            
         }while(cadenaLetras.length()<4);
-        
+            jLabel1.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras.charAt(0) +".png")));
+            jLabel2.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras.charAt(1) +".png")));
+            jLabel3.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras.charAt(2) +".png")));
+            jLabel4.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras.charAt(3) +".png")));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String cadenaLetras16 = ""; 
+        
+        jToggleButton1.setEnabled(true);
+        jToggleButton2.setEnabled(true);
+        jToggleButton3.setEnabled(true);
+        jToggleButton4.setEnabled(true);
+        jToggleButton5.setEnabled(true);
+        jToggleButton6.setEnabled(true);
+        jToggleButton7.setEnabled(true);
+        jToggleButton8.setEnabled(true);
+        jToggleButton9.setEnabled(true);
+        jToggleButton10.setEnabled(true);
+        jToggleButton11.setEnabled(true);
+        jToggleButton12.setEnabled(true);
+        jToggleButton13.setEnabled(true);
+        jToggleButton14.setEnabled(true);
+        jToggleButton15.setEnabled(true);
+        jToggleButton16.setEnabled(true);
+        
+        jLabel1.setIcon(new ImageIcon(getClass().getResource("/imagenes/Z.png")));
+        jLabel2.setIcon(new ImageIcon(getClass().getResource("/imagenes/Z.png")));
+        jLabel3.setIcon(new ImageIcon(getClass().getResource("/imagenes/Z.png")));
+        jLabel4.setIcon(new ImageIcon(getClass().getResource("/imagenes/Z.png")));
+        
         do{
             int letra = generadorLetras.nextInt(16)+65;
             char letrasAleatorias16 = (char) letra;
             cadenaLetras16 += letrasAleatorias16;
-            System.out.println(cadenaLetras16);
+            
+            //System.out.println(cadenaLetras16);
+            
         }while(cadenaLetras16.length()<16);
+        jToggleButton1.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(0) +".png")));
+        jToggleButton2.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(1) +".png")));
+        jToggleButton3.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(2) +".png")));
+        jToggleButton4.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(3) +".png")));
+        jToggleButton5.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(4) +".png")));
+        jToggleButton6.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(5) +".png")));
+        jToggleButton7.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(6) +".png")));
+        jToggleButton8.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(7) +".png")));
+        jToggleButton9.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(8) +".png")));
+        jToggleButton10.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(9) +".png")));
+        jToggleButton11.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(10) +".png")));
+        jToggleButton12.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(11) +".png")));
+        jToggleButton13.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(12) +".png")));
+        jToggleButton14.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(13) +".png")));
+        jToggleButton15.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(14) +".png")));
+        jToggleButton16.setIcon(new ImageIcon(getClass().getResource("/imagenes/"+cadenaLetras16.charAt(15) +".png")));
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(jToggleButton1.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(0))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(0))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton2.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(1))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(1))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos));
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton3.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(2))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(2))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton4.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(3))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(3))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton5.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(4))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(4))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos));
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton6.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(5))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(5))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton7.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(6))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(6))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton8.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(7))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(7))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+         if(jToggleButton9.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(8))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(8))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton10.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(9))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(9))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos));
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton11.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(10))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(10))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton12.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(11))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(11))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos));  
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+         if(jToggleButton13.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(12))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(12))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos));
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton14.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(13))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(13))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton15.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton15.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(14))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(14))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton16.setSelected(false);
+        }
+        if(jToggleButton16.isSelected()== true && cadenaLetras.indexOf(cadenaLetras16.charAt(15))>0 
+                && cadenaLetras.indexOf(cadenaLetras16.charAt(15))<4){
+            contadorAciertos++;
+            jLabel9.setText(String.valueOf(contadorAciertos)); 
+            
+            jToggleButton1.setSelected(false);
+            jToggleButton2.setSelected(false);
+            jToggleButton3.setSelected(false);
+            jToggleButton4.setSelected(false);
+            jToggleButton5.setSelected(false);
+            jToggleButton6.setSelected(false);
+            jToggleButton7.setSelected(false);
+            jToggleButton8.setSelected(false);
+            jToggleButton9.setSelected(false);
+            jToggleButton10.setSelected(false);
+            jToggleButton11.setSelected(false);
+            jToggleButton12.setSelected(false);
+            jToggleButton13.setSelected(false);
+            jToggleButton14.setSelected(false);
+            jToggleButton15.setSelected(false);
+        }
+       
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -340,10 +800,16 @@ public class Práctica3 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
